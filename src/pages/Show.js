@@ -1,4 +1,10 @@
 import {useState} from "react"
+//Bulma
+import {Button, Section} from "react-bulma-components"
+//components 
+import FormComp from "../components/FormComp"
+import ShowCard from "../components/ShowCard"
+import HeroComp from "../components/HeroComp"
 
 function Show(props){
   const id = props.match.params.id
@@ -34,34 +40,12 @@ function Show(props){
 
     return (
       <div className="showCheese">
-          <img src={showCheese.image} alt={showCheese.name} />
-            <h1>{showCheese.name}</h1>
-            <h2>{showCheese.countryOfOrigin}</h2>
-        <button onClick={removeCheese}>Bye!</button>
-        <form onSubmit={handleSubmit}>
-          <input 
-            type="text"
-            value={editForm.name}
-            name="name"
-            placeholder="name"
-            onChange={handleChange}
-          />
-          <input 
-            type="text"
-            value={editForm.image}
-            name="image"
-            placeholder="image URL"
-            onChange={handleChange}
-          />
-          <input 
-            type="text"
-            value={editForm.countryOfOrigin}
-            name="countryOfOrigin"
-            placeholder="country of origin"
-            onChange={handleChange}
-          />
-          <input type="submit" value="Update Cheese" />
-        </form>
+        <HeroComp title={showCheese.name}/>
+        <Section className="cheese-cards">
+          <ShowCard showCheese={showCheese} className="show-card-container"/>
+        </Section>
+        <FormComp handleSubmit={handleSubmit} formState={editForm} handleChange={handleChange} title="Edit" />
+        <Button onClick={removeCheese} className="is-normal delete-btn">Bye!</Button>
       </div>
     )
   } 

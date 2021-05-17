@@ -14,7 +14,7 @@ function FormComp(props){
                         value={formState.name}
                         name="name"
                         placeholder="name"
-                        onChange={formState.handleChange}
+                        onChange={props.handleChange}
                         className="form-input"
                     />
                     <Form.Input
@@ -22,7 +22,7 @@ function FormComp(props){
                         value={formState.image}
                         name="image"
                         placeholder="image URL"
-                        onChange={formState.handleChange}
+                        onChange={props.handleChange}
                         className="form-input"
                     />
                     <Form.Input
@@ -30,7 +30,7 @@ function FormComp(props){
                         value={formState.countryOfOrigin}
                         name="countryOfOrigin"
                         placeholder="country of origin"
-                        onChange={formState.handleChange}
+                        onChange={props.handleChange}
                         className="form-input"
                     />
                 <Button type="submit" className="is-normal add-submit">Submit</Button>

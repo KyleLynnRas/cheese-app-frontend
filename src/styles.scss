@@ -27,6 +27,20 @@ $title: rgb(233, 233, 233);
     flex-direction: row;
 }
 
+@mixin submit-btn{
+    margin-top: 10px;
+    color: $title;
+    font-weight: 700;
+    background-color: rgba(111, 111, 111, 0.68);
+    border: none;
+}
+
+@mixin card-container {
+    margin-top: 30px;
+    @include flex-column;
+    background-color:rgba(111, 111, 111, 0.714);
+    width: 95%;
+}
 
 // --------------------------
 // Body
@@ -44,7 +58,6 @@ body {
 // Index Page
 // --------------------------
 .index-container {
-   height: 100vh;
    @include flex-column;
    background-image: url("https://i.imgur.com/iaRAAo8.jpg");
    background-image: linear-gradient(#000000e2, rgba(147, 147, 147, 0.18)), url("https://i.imgur.com/iaRAAo8.jpg");
@@ -53,10 +66,7 @@ body {
 }
 
 .cheese-cards {
-    margin-top: 30px;
-    @include flex-column;
-    background-color:rgba(111, 111, 111, 0.714);
-    width: 95%;
+   @include card-container;
 }
 
 .c {
@@ -99,16 +109,48 @@ body {
 }
 
 .add-submit {
-    margin-top: 10px;
-    color: $title;
-    font-weight: 700;
-    background-color: rgba(111, 111, 111, 0.68);
-    border: none;
-   
+   @include submit-btn;
 }
 
+// --------------------------
+// Show page 
+// --------------------------
+.showCheese {
+    @include backgroundImage;
+    background-image: url("https://i.imgur.com/6O0MXGO.jpg");
+    background-image: linear-gradient(#000000e2, rgba(75, 75, 75, 0.473)), url("https://i.imgur.com/6O0MXGO.jpg");
+    background-image: -webkit-linear-gradient( #000000e2, rgba(75, 75, 75, 0.473)), url("https://i.imgur.com/6O0MXGO.jpg");
+    background-image: -moz-linear-gradient( #000000e2, rgba(75, 75, 75, 0.473)), url("https://i.imgur.com/6O0MXGO.jpg");
+    @include flex-column;
+ }
+
+.delete-btn {
+    @include submit-btn;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.show-card-container {
+    @include card-container;
+}
+
+.show-card {
+    width: 95%;
+}
+
+.showcard-header {
+    font-size: 20px;
+}
+
+.show-card-content {
+    font-size: 15px;
+}
+
+// --------------------------
+// MQ
+// --------------------------
 @media screen and (min-width: 768px) {
-    .cheese-cards {
+    .cheese-cards, .show-card-container {
         margin-top: 50px;
     }
 
@@ -129,6 +171,19 @@ body {
         margin: 30px;
         font-size: 28px;
     }
+
+    /*--Show--*/
+    .show-card {
+        width: 70%;
+    }
+
+    .showcard-header {
+        font-size: 30px;
+    }
+
+    .show-card-content {
+        font-size: 20px;
+    }
 }
 
 @media screen and (min-width: 950px) {
@@ -140,7 +195,6 @@ body {
 
     .new-form {
         margin-top: 40px;
-        margin-bottom: 40px;
         width: 50vw;
     }
 
@@ -158,6 +212,19 @@ body {
     .c {
         width: 30%;
     }
+
+    /*--Show--*/
+    .show-card-container {
+        width: 70%;
+    }
+
+    .show-card {
+        width: 60%;
+    }
+
+    .delete-btn {
+        margin-bottom: 40px;
+    }
 }
 
 @media screen and (min-width: 1200px) {
@@ -169,7 +236,7 @@ body {
 
     .new-form {
         margin-top: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 15px;
         width: 50vw;
     }
 
@@ -188,7 +255,24 @@ body {
         width: 25%;
     }
 
-    .add-submit {
+    .add-submit, .delete-btn {
         padding: 25px;
+    }
+
+    /*--Show--*/
+    .show-card-container {
+        width: 60%;
+    }
+
+    .show-card {
+        width: 55%;
+    }
+
+    .delete-btn {
+        margin-bottom: 40px;
+    }
+
+    .showcard-header {
+        font-size: 30px;
     }
 }

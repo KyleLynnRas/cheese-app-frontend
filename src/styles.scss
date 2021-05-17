@@ -147,6 +147,21 @@ body {
 }
 
 // --------------------------
+// Nav
+// --------------------------
+.nav {
+    background-color: rgb(14, 12, 14);
+    color: #fff;
+    height: 10vh;
+    @include flex-row
+}
+
+.cheese-icon {
+    font-size: 50px;
+    color: rgb(193, 177, 129);
+}
+
+// --------------------------
 // MQ
 // --------------------------
 @media screen and (min-width: 768px) {

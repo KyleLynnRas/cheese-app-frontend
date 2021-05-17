@@ -151,7 +151,6 @@ body {
 // --------------------------
 .nav {
     background-color: rgb(14, 12, 14);
-    color: #fff;
     height: 10vh;
     @include flex-row
 }
@@ -159,6 +158,14 @@ body {
 .cheese-icon {
     font-size: 50px;
     color: rgb(193, 177, 129);
+}
+
+// --------------------------
+// Footer
+// --------------------------
+.footer {
+    background-color: rgb(14, 12, 14);
+    padding: 3vh;
 }
 
 // --------------------------

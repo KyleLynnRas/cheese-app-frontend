@@ -1,5 +1,10 @@
 import {useState} from "react"
-import {Link} from "react-router-dom"
+//Bulma
+import {Section} from "react-bulma-components"
+//components
+import IndexCard from "../components/IndexCard"
+import HeroComp from "../components/HeroComp"
+import FormComp from "../components/FormComp"
 
 function Index({cheese, createCheese}){
     //state formData
@@ -32,11 +37,7 @@ function Index({cheese, createCheese}){
 
     const loaded = () => {
         return cheese.map((c) => (
-            <div key={c._id} className="c">
-                <Link to={`/cheese/${c._id}`}><h1>{c.name}</h1></Link>
-                <img src={c.image} alt={c.name} />
-                <h3>{c.countryOfOrigin}</h3>
-            </div>
+            <IndexCard c={c}/>
         ))
     }
 
@@ -45,33 +46,13 @@ function Index({cheese, createCheese}){
     }
 
     return(
-        <section>
-            <form onSubmit={handleSubmit}>
-                <input 
-                    type="text" 
-                    value={newForm.name}
-                    name="name"
-                    placeholder="name"
-                    onChange={handleChange}
-                />
-                 <input 
-                    type="text" 
-                    value={newForm.image}
-                    name="image"
-                    placeholder="image URL"
-                    onChange={handleChange}
-                />
-                 <input 
-                    type="text" 
-                    value={newForm.countryOfOrigin}
-                    name="countryOfOrigin"
-                    placeholder="country of origin"
-                    onChange={handleChange}
-                />
-                <input type="submit" value="Add a cheese" />
-            </form>
-            {cheese ? loaded() : loading()}
-        </section>
+        <div className="index-container">
+            <HeroComp title="The Place to Brie for Cheese Lovers" />
+            <FormComp handleSubmit={handleSubmit} formState={newForm} handleChange={handleChange} title="Add a Cheese" />
+            <Section className="cheese-cards">
+                {cheese ? loaded() : loading()}
+            </Section>
+        </div>
         ) 
 } 
   

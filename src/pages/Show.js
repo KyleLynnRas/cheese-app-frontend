@@ -34,9 +34,9 @@ function Show(props){
 
     return (
       <div className="showCheese">
-        <h1>{showCheese.name}</h1>
-        <h2>{showCheese.countryOfOrigin}</h2>
-        <img src={showCheese.image} alt={showCheese.name} />
+          <img src={showCheese.image} alt={showCheese.name} />
+            <h1>{showCheese.name}</h1>
+            <h2>{showCheese.countryOfOrigin}</h2>
         <button onClick={removeCheese}>Bye!</button>
         <form onSubmit={handleSubmit}>
           <input 

@@ -147,6 +147,23 @@ body {
 }
 
 // --------------------------
+// Bulma Modal
+// --------------------------
+.modal-img {
+    height: 60vh;
+    width: auto;
+}
+
+.big-cheese {
+    @include submit-btn;
+    margin-bottom: 20px;
+}
+
+.modal-background {
+    background-color: #000;
+}
+
+// --------------------------
 // Nav
 // --------------------------
 .nav {
@@ -178,7 +195,7 @@ body {
 
     .c {
         width: 60%;
-        margin: 20px auto 20px auto;
+        margin: 20px 10px 20px 10px;
     }
 
     .new-form {
@@ -233,6 +250,7 @@ body {
 
     .c {
         width: 30%;
+        margin: 15px;
     }
 
     /*--Show--*/
@@ -275,6 +293,7 @@ body {
 
     .c {
         width: 25%;
+        margin: 15px;
     }
 
     .add-submit, .delete-btn {
@@ -287,7 +306,7 @@ body {
     }
 
     .show-card {
-        width: 55%;
+        width: 50%;
     }
 
     .delete-btn {

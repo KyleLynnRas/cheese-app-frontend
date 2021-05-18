@@ -58,6 +58,7 @@ body {
 // Index Page
 // --------------------------
 .index-container {
+   height: 100%;
    @include flex-column;
    background-image: url("https://i.imgur.com/iaRAAo8.jpg");
    background-image: linear-gradient(#000000e2, rgba(147, 147, 147, 0.18)), url("https://i.imgur.com/iaRAAo8.jpg");
@@ -67,6 +68,7 @@ body {
 
 .cheese-cards {
    @include card-container;
+   margin-bottom: 30px;
 }
 
 .c {
@@ -116,6 +118,7 @@ body {
 // Show page 
 // --------------------------
 .showCheese {
+    height: 100%;
     @include backgroundImage;
     background-image: url("https://i.imgur.com/6O0MXGO.jpg");
     background-image: linear-gradient(#000000e2, rgba(75, 75, 75, 0.473)), url("https://i.imgur.com/6O0MXGO.jpg");
@@ -168,7 +171,7 @@ body {
 // --------------------------
 .nav {
     background-color: rgb(14, 12, 14);
-    height: 10vh;
+    height: 10%;
     @include flex-row
 }
 
@@ -182,7 +185,7 @@ body {
 // --------------------------
 .footer {
     background-color: rgb(14, 12, 14);
-    padding: 3vh;
+    height: 5%;
 }
 
 // --------------------------
